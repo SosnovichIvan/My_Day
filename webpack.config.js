@@ -52,6 +52,10 @@ module.exports = {
     alias: {
       shared: path.resolve(__dirname, "src/shared/"),
       providers: path.resolve(__dirname, "src/providers/"),
+      pages: path.resolve(__dirname, "src/pages/"),
+      entities: path.resolve(__dirname, "src/entities/"),
+      features: path.resolve(__dirname, "src/features/"),
+      widgets: path.resolve(__dirname, "src/widgets/"),
     },
   },
 };

@@ -6,6 +6,7 @@ export const theme = createTheme({
     label: {
       fontSize: 64,
       color: "red",
+      fontFamily: "Josefin Sans Variable",
     },
   },
 });
