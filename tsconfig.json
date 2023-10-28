@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"baseUrl": "src",
+		"paths": {
+			"providers/*": ["./providers/*"],
+			"app/*": ["./app/*"],
+			"pages/*": ["./pages/*"],
+			"entities/*": ["./entities/*"],
+			"features/*": ["./features/*"],
+			"shared/*": ["./shared/*"],
+			"widgets/*": ["./widgets/*"],
+		  },
+		"typeRoots": ["node_modules/@types", "./src/shared/@types"],
+		"outDir": "./dist",
+		"target": "es5",
+		"allowJs": false,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"experimentalDecorators": true,
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": false,
+		"jsx": "react-jsx",
+	},
+	"include": ["./src/*", "./src/**/*", "src/declaration.d.ts"],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	},
+	"files": ["src/app/index.tsx"]
+}
