@@ -1,6 +1,4 @@
-import { Theme, ThemeOptions } from "@mui/material/styles";
-
-import type { CustomThemes } from "providers/theme";
+import { MyTheme, MyThemeOptions } from "providers/theme";
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
@@ -12,11 +10,9 @@ declare module "@mui/material/styles" {
     label?: React.CSSProperties;
   }
 
-  interface CustomTheme extends Theme, CustomThemes {}
+  interface Theme extends MyTheme {}
   // allow configuration using `createTheme`
-  interface CustomThemeOptions extends ThemeOptions {}
-
-  export function createTheme(options?: CustomThemeOptions): CustomTheme;
+  interface ThemeOptions extends MyThemeOptions {}
 }
 
 declare module "@mui/material/Typography" {

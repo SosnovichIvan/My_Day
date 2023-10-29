@@ -1,12 +1,13 @@
-import { createTheme } from "@mui/material/styles";
+import { MyTheme } from "./index.types";
 
-export const theme = createTheme({
-  typography: {
-    fontFamily: "Josefin Sans Variable, Oswald Variable",
-    label: {
-      fontSize: 64,
-      color: "red",
-      fontFamily: "Josefin Sans Variable",
-    },
+export const myThemeLight: MyTheme = {
+  header: {
+    background: "#f5f5f5",
   },
-});
+};
+
+export const myThemeDark: MyTheme = {
+  header: {
+    background: "#000",
+  },
+};

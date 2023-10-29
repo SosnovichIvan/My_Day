@@ -1,13 +1,38 @@
 import "@fontsource-variable/oswald/index.css";
 import "@fontsource-variable/josefin-sans/index.css";
 
-import { ThemeProvider } from "@mui/material/styles";
+import { useMemo } from "react";
+
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { BrowserRouter } from "react-router-dom";
 
 import { Router } from "providers/router";
-import { theme } from "providers/theme";
+import { THEME_MODE, myThemeDark, myThemeLight } from "providers/theme";
+
+import { getThemeModeSelector } from "../model/selectors/getThemeModeSelector";
 
 export const Container = () => {
+  const mode = getThemeModeSelector();
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        typography: {
+          fontFamily: "Josefin Sans Variable, Oswald Variable",
+          label: {
+            fontSize: 64,
+            color: "red",
+            fontFamily: "Josefin Sans Variable",
+          },
+        },
+        ...(mode === THEME_MODE.DARK ? myThemeDark : myThemeLight),
+        palette: {
+          mode: mode === THEME_MODE.DARK ? "dark" : "light",
+        },
+      }),
+    [mode]
+  );
+
   return (
     <ThemeProvider {...{ theme }}>
       <BrowserRouter>
