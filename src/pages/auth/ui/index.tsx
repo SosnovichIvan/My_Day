@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { userReducer } from "providers/store";
 
-import { REGISTER_PAGE_PATH } from "shared/constants/path";
+import { setAuthAction } from "../model/actions/setAuthAction";
 
 export const AuthPage = () => {
-  return (
-    <div>
-      <Link to={REGISTER_PAGE_PATH}>ad</Link>
-    </div>
-  );
+  const isAuth = userReducer((state) => state.isAuth);
+
+  setTimeout(() => {
+    setAuthAction(true);
+  }, 5000);
+
+  return <div>isAuth: {`${isAuth}`}</div>;
 };
