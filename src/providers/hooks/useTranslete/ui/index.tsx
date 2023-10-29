@@ -7,20 +7,20 @@ import { LANGUAGE } from "shared/constants/storage";
 import { en } from "../config/dictionaries/en";
 import { ru } from "../config/dictionaries/ru";
 import { Language } from "../config/language";
+import { changeLangAction } from "../model/actions/changeLangAction";
+import { getChoiceLangSelector } from "../model/selectors/getChoiceLangSelector";
 
 export const useTranslete = () => {
-  const [choice, setChoice] = useState<Language>(
-    (sessionStorage.getItem(LANGUAGE) as Language) || Language.RU
-  );
+  const choice = getChoiceLangSelector();
 
   const [dictionary, setDictionar] = useState(ru);
 
   const t = (path: string) => {
-    return get(dictionary, path, "");
+    return get(dictionary, path, path);
   };
 
   const handleChangeLanguage = (value: Language) => {
-    setChoice(value);
+    changeLangAction(value);
     sessionStorage.setItem(LANGUAGE, value);
   };
 

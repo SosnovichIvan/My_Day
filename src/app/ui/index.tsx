@@ -19,10 +19,10 @@ export const Container = () => {
       createTheme({
         typography: {
           fontFamily: "Josefin Sans Variable, Oswald Variable",
-          label: {
-            fontSize: 64,
-            color: "red",
+          logo: {
+            fontSize: 26,
             fontFamily: "Josefin Sans Variable",
+            fontWeight: "400",
           },
         },
         ...(mode === THEME_MODE.DARK ? myThemeDark : myThemeLight),

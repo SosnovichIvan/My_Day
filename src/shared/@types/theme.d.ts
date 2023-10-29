@@ -2,12 +2,12 @@ import { MyTheme, MyThemeOptions } from "providers/theme";
 
 declare module "@mui/material/styles" {
   interface TypographyVariants {
-    label: React.CSSProperties;
+    logo: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
-    label?: React.CSSProperties;
+    logo?: React.CSSProperties;
   }
 
   interface Theme extends MyTheme {}
@@ -17,6 +17,6 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
-    label: true;
+    logo: true;
   }
 }

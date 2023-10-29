@@ -6,10 +6,12 @@ export enum THEME_MODE {
 export interface MyTheme {
   header: {
     background: string;
+    logo: string;
   };
 }
 export interface MyThemeOptions {
   header: {
     background: string;
+    logo: string;
   };
 }
